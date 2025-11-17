@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build and Run OpenGL",
+			"type": "shell",
+			"command": "E:\\mingw\\mingw64\\bin\\g++.exe",
+			"args": [
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"-I", "V:\\FileShare\\glfw-3.4.bin.WIN64\\include",
+				"-I", "V:\\FileShare\\glew-2.1.0\\include",
+				"-L", "V:\\FileShare\\glew-2.1.0\\lib\\Release\\x64",
+				"-L", "V:\\FileShare\\glfw-3.4.bin.WIN64\\lib-mingw-w64",
+				"-lopengl32",
+				"-lglu32",
+				"-lglew32",
+				"-lglfw3dll",
+				"&&",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": ["$gcc"]
+		}
+	]
+}
